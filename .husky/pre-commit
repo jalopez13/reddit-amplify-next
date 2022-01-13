@@ -1,5 +1,33 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm run pre-commit
-npx lint-staged
+echo '🙂 Styling, testing and building your project before committing...'
+
+# check tsconfig standards
+npm run check-types || (
+  echo '🤮  TypeScript check failed. Please fix the errors and try again.'
+  exit 1
+)
+
+# check prettier
+npm run check-format || (
+  echo '🤮  Prettier check failed. Please fix the errors and try again.'
+  exit 1
+)
+
+# check eslint standars
+npm run check-lint || (
+  echo '🤮  ESLint check failed. Please fix the errors and try again.'
+  exit 1
+)
+
+echo '🙂 👍 Code looks good, trying to build now...'
+
+# check build
+npm run build || (
+  echo '🤮  Build failed. Please fix the errors and try again.'
+  exit 1
+)
+
+echo '🙂 👍 Build successful, ready to commit!'
+
