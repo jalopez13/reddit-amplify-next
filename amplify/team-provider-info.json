@@ -10,6 +10,11 @@
       "StackName": "amplify-redditnext-dev-220512",
       "StackId": "arn:aws:cloudformation:us-west-2:397491111170:stack/amplify-redditnext-dev-220512/c9672980-7436-11ec-91be-067d22f9e92f",
       "AmplifyAppId": "d1b2sl8d83fplv"
+    },
+    "categories": {
+      "auth": {
+        "redditnexte81a92af": {}
+      }
     }
   }
 }
