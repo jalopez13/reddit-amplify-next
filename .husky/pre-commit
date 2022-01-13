@@ -31,3 +31,4 @@ npm run build || (
 
 echo '🙂 👍 Build successful, ready to commit!'
 
+npx lint-staged
